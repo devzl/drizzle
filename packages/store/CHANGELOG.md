@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.2](https://github.com/devzl/drizzle/compare/@castrated-drizzle/store@1.6.1...@castrated-drizzle/store@1.6.2) (2022-03-24)
+
+
+### Bug Fixes
+
+* disable automatic connection to metamask ([a3cb1a0](https://github.com/devzl/drizzle/commit/a3cb1a0))
+
+
+
+
+
 ## [1.6.1](https://github.com/devzl/drizzle/compare/@castrated-drizzle/store@1.5.9...@castrated-drizzle/store@1.6.1) (2022-03-24)
 
 **Note:** Version bump only for package @castrated-drizzle/store
