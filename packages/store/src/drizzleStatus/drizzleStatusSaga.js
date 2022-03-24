@@ -15,8 +15,8 @@ export function * initializeDrizzle (action) {
     const { drizzle, options } = action
 
     // Initialize web3 and get the current network ID.
-    const web3 = yield call(initializeWeb3, options.web3)
-    drizzle.web3 = web3
+    // const web3 = yield call(initializeWeb3, options.web3)
+    // drizzle.web3 = web3
 
     // Client may opt out of connecting their account to the dapp Guard against
     // further web3 interaction, and note web3 will be undefined
