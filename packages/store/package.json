@@ -1,6 +1,6 @@
 {
   "name": "@castrated-drizzle/store",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "A reactive data-store for web3 and smart contracts.",
   "types": "./index.d.ts",
   "main": "./dist/drizzle-store.js",
