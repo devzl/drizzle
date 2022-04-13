@@ -15,8 +15,8 @@ export function * initializeDrizzle (action) {
     const { drizzle, options } = action
 
     // Initialize web3 and get the current network ID.
-    // const web3 = yield call(initializeWeb3, options.web3)
-    // drizzle.web3 = web3
+    const web3 = yield call(initializeWeb3, options.web3)
+    drizzle.web3 = web3
 
     // Client may opt out of connecting their account to the dapp Guard against
     // further web3 interaction, and note web3 will be undefined
@@ -50,17 +50,7 @@ export function * initializeDrizzle (action) {
 
         const syncAlways = options.syncAlways
 
-        // Protect server-side environments by ensuring ethereum access is
-        // guarded by isMetaMask which should only be in browser environment.
-        //
-        if (web3.currentProvider.isMetaMask && !window.ethereum) {
-          // Using old MetaMask, attempt block polling.
-          const interval = options.polls.blocks
-          yield put({ type: BlocksActions.BLOCKS_POLLING, drizzle, interval, web3, syncAlways })
-        } else {
-          // Not using old MetaMask, attempt subscription block listening.
-          yield put({ type: BlocksActions.BLOCKS_LISTENING, drizzle, web3, syncAlways })
-        }
+        yield put({ type: BlocksActions.BLOCKS_LISTENING, drizzle, web3, syncAlways })
 
         // Accounts Polling
         if ('accounts' in options.polls) {
